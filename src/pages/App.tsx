@@ -2,8 +2,7 @@ import React, { Suspense, useEffect, useState } from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 import { Credentials, StringTranslations } from '@crowdin/crowdin-api-client'
-import { Language, useModal } from '@duhd4h/global-uikit'
-import VersionBar from 'components/VersionBar'
+import { Language } from '@duhd4h/global-uikit'
 import Popups from '../components/Popups'
 import Web3ReactManager from '../components/Web3ReactManager'
 import { RedirectDuplicateTokenIds, RedirectOldAddLiquidityPathStructure } from './AddLiquidity/redirects'
@@ -18,7 +17,6 @@ import { RedirectPathToSwapOnly } from './Swap/redirects'
 import { EN, allLanguages } from '../constants/localisation/languageCodes'
 import { LanguageContext } from '../hooks/LanguageContext'
 import { TranslationsContext } from '../hooks/TranslationsContext'
-import UseV2ExchangeModal from '../components/UseV2ExchangeModal'
 
 import Menu from '../components/Menu'
 import useGetDocumentTitlePrice from '../hooks/useGetDocumentTitlePrice'
@@ -54,19 +52,6 @@ export default function App() {
   }
 
   const stringTranslationsApi = new StringTranslations(credentials)
-
-  const [hasSeenModal, setHasSeenModal] = useState(false)
-  const [onPresentUseV2ExchangeModal] = useModal(<UseV2ExchangeModal />)
-
-  useEffect(() => {
-    const showModal = () => {
-      onPresentUseV2ExchangeModal()
-      setHasSeenModal(true)
-    }
-    if (!hasSeenModal) {
-      showModal()
-    }
-  }, [onPresentUseV2ExchangeModal, hasSeenModal])
 
   const getStoredLang = (storedLangCode: string) => {
     return allLanguages.filter((language) => {
@@ -150,7 +135,6 @@ export default function App() {
                   </Web3ReactManager>
                 </BodyWrapper>
               </Menu>
-              <VersionBar />
             </TranslationsContext.Provider>
           </LanguageContext.Provider>
         </AppWrapper>
