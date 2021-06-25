@@ -1,6 +1,6 @@
 import { ChainId, JSBI, Percent, Token, WETH } from '@duhd4h/global-sdk'
 
-export const ROUTER_ADDRESS = '0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F'
+export const ROUTER_ADDRESS = '0x0E6c4f2d1a0b7E7dCc6CEBF718216b4ABCb85ff0'
 
 // a list of tokens by chain
 type ChainTokenList = {
