@@ -1,14 +1,14 @@
 {
-  "name": "@pancakeswap/interface",
-  "description": "Pancakeswap Interface",
+  "name": "@global/interface",
+  "description": "Global interface",
   "homepage": ".",
   "private": true,
   "dependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
     "@crowdin/crowdin-api-client": "^1.8.16",
     "@ethersproject/experimental": "^5.0.1",
-    "@duhd4h/global-sdk": "1.0.2",
-    "@duhd4h/global-uikit": "1.0.17",
+    "@duhd4h/global-sdk": "^1.0.2",
+    "@duhd4h/global-uikit": "^1.0.17",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",
     "@reach/portal": "^0.10.3",
@@ -67,7 +67,7 @@
   "devDependencies": {
     "@commitlint/cli": "^12.0.0",
     "@commitlint/config-conventional": "^12.0.0",
-    "@pancakeswap-libs/eslint-config-pancake": "1.0.0",
+    "@duhd4h/eslint-config-global": "1.1.10",
     "@types/jest": "^26.0.20",
     "@types/testing-library__cypress": "^5.0.8",
     "cypress": "^4.11.0",
