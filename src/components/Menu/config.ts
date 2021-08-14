@@ -1,10 +1,11 @@
 import { MenuEntry } from '@duhd4h/global-uikit'
+import { BASE_MAIN_FRONTEND_URL_FARMS, BASE_MAIN_FRONTEND_URL_HOME, BASE_MAIN_FRONTEND_URL_POOLS } from '../../config'
 
 const config: MenuEntry[] = [
   {
     label: 'Home',
     icon: 'HomeIcon',
-    href: '/',
+    href: BASE_MAIN_FRONTEND_URL_HOME,
   },
   {
     label: 'Exchange',
@@ -19,12 +20,12 @@ const config: MenuEntry[] = [
   {
     label: 'Farms',
     icon: 'FarmIcon',
-    href: '',
+    href: BASE_MAIN_FRONTEND_URL_FARMS,
   },
   {
     label: 'Pools',
     icon: 'PoolIcon',
-    href: '',
+    href: BASE_MAIN_FRONTEND_URL_POOLS,
   },
   {
     label: 'More',
