@@ -36,6 +36,7 @@ const BodyWrapper = styled.div`
   ${({ theme }) => theme.mediaQueries.lg} {
     margin-bottom: 0;
   }
+  width: 100%;
 `
 
 const CACHE_KEY = 'pancakeSwapLanguage'

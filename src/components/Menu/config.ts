@@ -1,49 +1,45 @@
 import { MenuEntry } from '@duhd4h/global-uikit'
+import {
+  BASE_MAIN_FRONTEND_URL_FARMS,
+  BASE_MAIN_FRONTEND_URL_HOME,
+  BASE_MAIN_FRONTEND_URL_POOLS_GLOBAL,
+  BASE_MAIN_FRONTEND_URL_POOLS_TOKEN,
+  BASE_MAIN_FRONTEND_URL_VAULTS
+} from '../../config'
 
 const config: MenuEntry[] = [
   {
     label: 'Home',
-    icon: 'HomeIcon',
-    href: '/',
+    href: BASE_MAIN_FRONTEND_URL_HOME,
   },
   {
     label: 'Exchange',
-    icon: 'PoolIcon',
     href: '/swap',
   },
   {
     label: 'Liquidity',
-    icon: 'PoolIcon',
     href: '/pool',
   },
   {
     label: 'Farms',
-    icon: 'FarmIcon',
-    href: '',
+    href: BASE_MAIN_FRONTEND_URL_FARMS,
   },
   {
-    label: 'Pools',
-    icon: 'PoolIcon',
-    href: '',
+    label: 'Stake Global',
+    href: BASE_MAIN_FRONTEND_URL_POOLS_GLOBAL,
   },
   {
-    label: 'More',
-    icon: 'MoreIcon',
-    items: [
-      {
-        label: 'Contact',
-        href: '',
-      },
-      {
-        label: 'Voting',
-        href: '',
-      },
-      {
-        label: 'Github',
-        href: 'https://github.com/Global-Repo',
-      },
-    ],
+    label: 'Stake Token',
+    href: BASE_MAIN_FRONTEND_URL_POOLS_TOKEN,
   },
+  {
+    label: 'Vaults',
+    href: BASE_MAIN_FRONTEND_URL_VAULTS,
+  },
+  {
+    label: 'BeGlobal',
+    href: 'https://beglobal.finance/',
+  }
 ]
 
 export default config
