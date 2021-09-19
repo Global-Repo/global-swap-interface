@@ -4,15 +4,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   flex: 1;
-
+  min-height: 100vh;
   width: 100%;
   padding: 32px 16px;
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    min-height: 90vh;
-  }
+  padding-top: 10vh;
+  justify-content: normal;
 `
 
 export default Container

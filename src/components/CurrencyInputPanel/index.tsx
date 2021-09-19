@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { Currency, Pair } from '@duhd4h/global-sdk'
-import { Button, ChevronDownIcon, Text } from '@duhd4h/global-uikit'
+import { Button, ChevronDownIcon, GradientBorderBox, Text } from '@duhd4h/global-uikit'
 import styled from 'styled-components'
 import { darken } from 'polished'
 import useI18n from 'hooks/useI18n'
@@ -54,17 +54,18 @@ const Aligner = styled.span`
   align-items: center;
   justify-content: space-between;
 `
-const InputPanel = styled.div<{ hideInput?: boolean }>`
+const InputPanel = styled(GradientBorderBox)<{ hideInput?: boolean }>`
   display: flex;
   flex-flow: column nowrap;
   position: relative;
   border-radius: ${({ hideInput }) => (hideInput ? '8px' : '20px')};
-  background-color: ${({ theme }) => theme.colors.background};
+  // background-color: ${({ theme }) => theme.colors.background};
   z-index: 1;
 `
 const Container = styled.div<{ hideInput: boolean }>`
+  width: 100%;
   border-radius: 16px;
-  background-color: ${({ theme }) => theme.colors.input};
+  // background-color: ${({ theme }) => theme.colors.input};
   box-shadow: ${({ theme }) => theme.shadows.inset};
 `
 interface CurrencyInputPanelProps {

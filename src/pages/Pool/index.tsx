@@ -1,7 +1,7 @@
 import React, { useContext, useMemo } from 'react'
 import { ThemeContext } from 'styled-components'
 import { Pair } from '@duhd4h/global-sdk'
-import { Button, CardBody, Text } from '@duhd4h/global-uikit'
+import { Button, CardBody, GradientBorderBox, Text } from '@duhd4h/global-uikit'
 import CardNav from 'components/CardNav'
 import Question from 'components/QuestionHelper'
 import FullPositionCard from 'components/PositionCard'
@@ -62,7 +62,7 @@ export default function Pool() {
             title={TranslateString(262, 'Liquidity')}
             description={TranslateString(1168, 'Add liquidity to receive LP tokens')}
         >
-          <Button id="join-pool-button" as={Link} to="/add/BNB" mb="16px">
+          <Button id="join-pool-button" as={Link} to="/add/BNB" mb="16px" variant="full_gradient">
             {TranslateString(168, 'Add Liquidity')}
           </Button>
         </PageHeader>
@@ -80,17 +80,17 @@ export default function Pool() {
               </RowBetween>
 
               {!account ? (
-                <LightCard padding="40px">
+                <GradientBorderBox style={{ padding: '40px'}}>
                   <Text color="textDisabled" textAlign="center">
                     {TranslateString(156, 'Connect to a wallet to view your liquidity.')}
                   </Text>
-                </LightCard>
+                </GradientBorderBox>
               ) : v2IsLoading ? (
-                <LightCard padding="40px">
+                <GradientBorderBox style={{ padding: '40px'}}>
                   <Text color="textDisabled" textAlign="center">
                     <Dots>Loading</Dots>
                   </Text>
-                </LightCard>
+                </GradientBorderBox>
               ) : allV2PairsWithLiquidity?.length > 0 ? (
                 <>
                   {allV2PairsWithLiquidity.map((v2Pair) => (
@@ -98,11 +98,11 @@ export default function Pool() {
                   ))}
                 </>
               ) : (
-                <LightCard padding="40px">
+                <GradientBorderBox style={{padding:"40px"}}>
                   <Text color="textDisabled" textAlign="center">
                     {TranslateString(104, 'No liquidity found.')}
                   </Text>
-                </LightCard>
+                </GradientBorderBox>
               )}
 
               <div>

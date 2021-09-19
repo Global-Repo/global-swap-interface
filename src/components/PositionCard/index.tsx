@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { JSBI, Pair, Percent } from '@duhd4h/global-sdk'
-import { Button, Card as UIKitCard, CardBody, Text } from '@duhd4h/global-uikit'
+import { Button, Card as UIKitCard, CardBody, GradientBorderBox, Text } from '@duhd4h/global-uikit'
 import { darken } from 'polished'
 import { ChevronDown, ChevronUp } from 'react-feather'
 import { Link } from 'react-router-dom'
@@ -23,10 +23,6 @@ export const FixedHeightRow = styled(RowBetween)`
 `
 
 export const HoverCard = styled(Card)`
-  border: 1px solid ${({ theme }) => theme.colors.invertedContrast};
-  :hover {
-    border: 1px solid ${({ theme }) => darken(0.06, theme.colors.invertedContrast)};
-  }
 `
 
 interface PositionCardProps {
@@ -147,6 +143,7 @@ export default function FullPositionCard({ pair, removeOnly }: PositionCardProps
       : [undefined, undefined]
 
   return (
+    <GradientBorderBox>
     <HoverCard>
       <AutoColumn gap="12px">
         <FixedHeightRow onClick={() => setShowMore(!showMore)} style={{ cursor: 'pointer' }}>
@@ -206,6 +203,7 @@ export default function FullPositionCard({ pair, removeOnly }: PositionCardProps
                   as={Link}
                   to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}
                   style={{ width: '48%' }}
+                  variant="full_gradient"
                 >
                   Add
                 </Button>
@@ -214,6 +212,7 @@ export default function FullPositionCard({ pair, removeOnly }: PositionCardProps
                 as={Link}
                 style={{ width: '48%' }}
                 to={`/remove/${currencyId(currency0)}/${currencyId(currency1)}`}
+                variant="full_gradient"
               >
                 Remove
               </Button>
@@ -222,5 +221,6 @@ export default function FullPositionCard({ pair, removeOnly }: PositionCardProps
         )}
       </AutoColumn>
     </HoverCard>
+    </GradientBorderBox>
   )
 }
