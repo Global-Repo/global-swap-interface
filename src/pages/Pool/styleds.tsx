@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   position: relative;
+  width: 436px;
 `
 
 export const ClickableText = styled(Text)`

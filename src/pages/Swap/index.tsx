@@ -43,6 +43,13 @@ const StyledLink = styled(Link)`
   color: ${({ theme }) => theme.colors.failure};
 `
 
+const Separator = styled.div`
+  margin: auto;
+  width: 90%;
+  height: 2px;
+  background: linear-gradient(90deg, #e94e2c, #529cd6);
+`
+
 const Swap = () => {
   const loadedUrlParams = useDefaultsFromURLSearch()
   const TranslateString = useI18n()
@@ -384,6 +391,7 @@ const Swap = () => {
             title={TranslateString(8, 'Exchange')}
             description={TranslateString(1192, 'Trade tokens in an instant')}
           />
+          <Separator />
           <CardBody>
             <AutoColumn gap="md">
               <CurrencyInputPanel
@@ -405,7 +413,7 @@ const Swap = () => {
                 <AutoRow justify={isExpertMode ? 'space-between' : 'center'} style={{ padding: '0 1rem' }}>
                   <ArrowWrapper clickable>
                     <IconButton
-                      variant="tertiary"
+                      variant="full_gradient"
                       onClick={() => {
                         setApprovalSubmitted(false) // reset 2 step UI for approvals
                         onSwitchTokens()
@@ -413,7 +421,7 @@ const Swap = () => {
                       style={{ borderRadius: '50%' }}
                       scale="sm"
                     >
-                      <ArrowDownIcon color="primary" width="24px" />
+                      <ArrowDownIcon color="white" width="24px" />
                     </IconButton>
                   </ArrowWrapper>
                   {recipient === null && !showWrap && isExpertMode ? (
@@ -504,7 +512,7 @@ const Swap = () => {
                     onClick={approveCallback}
                     disabled={disableSwap || approval !== ApprovalState.NOT_APPROVED || approvalSubmitted}
                     style={{ width: '48%' }}
-                    variant={approval === ApprovalState.APPROVED ? 'success' : 'primary'}
+                    variant={approval === ApprovalState.APPROVED ? 'success' : 'full_gradient'}
                   >
                     {approval === ApprovalState.PENDING ? (
                       <AutoRow gap="6px" justify="center">
@@ -538,7 +546,7 @@ const Swap = () => {
                       approval !== ApprovalState.APPROVED ||
                       (priceImpactSeverity > 3 && !isExpertMode)
                     }
-                    variant={isValid && priceImpactSeverity > 2 ? 'danger' : 'primary'}
+                    variant={isValid && priceImpactSeverity > 2 ? 'danger' : 'full_gradient'}
                   >
                     {priceImpactSeverity > 3 && !isExpertMode
                       ? `Price Impact High`
@@ -564,7 +572,7 @@ const Swap = () => {
                   disabled={
                     disableSwap || !isValid || (priceImpactSeverity > 3 && !isExpertMode) || !!swapCallbackError
                   }
-                  variant={isValid && priceImpactSeverity > 2 && !swapCallbackError ? 'danger' : 'primary'}
+                  variant={isValid && priceImpactSeverity > 2 && !swapCallbackError ? 'danger' : 'full_gradient'}
                   width="100%"
                 >
                   {swapInputError ||
