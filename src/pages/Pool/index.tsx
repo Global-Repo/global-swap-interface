@@ -6,7 +6,7 @@ import CardNav from 'components/CardNav'
 import Question from 'components/QuestionHelper'
 import FullPositionCard from 'components/PositionCard'
 import { useTokenBalancesWithLoadingIndicator } from 'state/wallet/hooks'
-import { StyledInternalLink } from 'components/Shared'
+import { StyledGradientLink, StyledInternalLink } from 'components/Shared'
 import { LightCard } from 'components/Card'
 import { RowBetween } from 'components/Row'
 import { AutoColumn } from 'components/Column'
@@ -31,9 +31,10 @@ export default function Pool() {
     () => trackedTokenPairs.map((tokens) => ({ liquidityToken: toV2LiquidityToken(tokens), tokens })),
     [trackedTokenPairs]
   )
-  const liquidityTokens = useMemo(() => tokenPairsWithLiquidityTokens.map((tpwlt) => tpwlt.liquidityToken), [
-    tokenPairsWithLiquidityTokens,
-  ])
+  const liquidityTokens = useMemo(
+    () => tokenPairsWithLiquidityTokens.map((tpwlt) => tpwlt.liquidityToken),
+    [tokenPairsWithLiquidityTokens]
+  )
   const [v2PairsBalances, fetchingV2PairBalances] = useTokenBalancesWithLoadingIndicator(
     account ?? undefined,
     liquidityTokens
@@ -59,8 +60,8 @@ export default function Pool() {
       <CardNav activeIndex={1} />
       <AppBody>
         <PageHeader
-            title={TranslateString(262, 'Liquidity')}
-            description={TranslateString(1168, 'Add liquidity to receive LP tokens')}
+          title={TranslateString(262, 'Liquidity')}
+          description={TranslateString(1168, 'Add liquidity to receive LP tokens')}
         >
           <Button id="join-pool-button" as={Link} to="/add/BNB" mb="16px" variant="full_gradient">
             {TranslateString(168, 'Add Liquidity')}
@@ -80,13 +81,13 @@ export default function Pool() {
               </RowBetween>
 
               {!account ? (
-                <GradientBorderBox style={{ padding: '40px'}}>
+                <GradientBorderBox style={{ padding: '40px' }}>
                   <Text color="textDisabled" textAlign="center">
                     {TranslateString(156, 'Connect to a wallet to view your liquidity.')}
                   </Text>
                 </GradientBorderBox>
               ) : v2IsLoading ? (
-                <GradientBorderBox style={{ padding: '40px'}}>
+                <GradientBorderBox style={{ padding: '40px' }}>
                   <Text color="textDisabled" textAlign="center">
                     <Dots>Loading</Dots>
                   </Text>
@@ -98,7 +99,7 @@ export default function Pool() {
                   ))}
                 </>
               ) : (
-                <GradientBorderBox style={{padding:"40px"}}>
+                <GradientBorderBox style={{ padding: '40px' }}>
                   <Text color="textDisabled" textAlign="center">
                     {TranslateString(104, 'No liquidity found.')}
                   </Text>
@@ -108,9 +109,9 @@ export default function Pool() {
               <div>
                 <Text fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
                   {TranslateString(106, "Don't see a pool you joined?")}{' '}
-                  <StyledInternalLink id="import-pool-link" to="/find">
+                  <StyledGradientLink id="import-pool-link" to="/find">
                     {TranslateString(108, 'Import it.')}
-                  </StyledInternalLink>
+                  </StyledGradientLink>
                 </Text>
                 <Text fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
                   {TranslateString(1172, 'Or, if you staked your LP tokens in a farm, unstake them to see them here.')}

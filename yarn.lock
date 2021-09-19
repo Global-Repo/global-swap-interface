@@ -1586,10 +1586,10 @@
     truffle-flattener "^1.4.4"
     truffle-hdwallet-provider "^1.0.17"
 
-"@duhd4h/global-uikit@^1.0.38":
-  version "1.0.38"
-  resolved "https://registry.yarnpkg.com/@duhd4h/global-uikit/-/global-uikit-1.0.38.tgz#5c358e274bf0cea1b2b4dafb91f4c98483055f41"
-  integrity sha512-ymIvV7EpjSB9FthsYNZwrD1WzuJJMdilsSdk5h7btgDXISNktcNfHELziIBU/R6LUBDwvc+MndEtQKXts9mARQ==
+"@duhd4h/global-uikit@^1.0.39":
+  version "1.0.39"
+  resolved "https://registry.yarnpkg.com/@duhd4h/global-uikit/-/global-uikit-1.0.39.tgz#8452d0c5b40d23dbc3e97c9d431dc4cbadca507f"
+  integrity sha512-aq2ISHFAFwH8O08l/yIzhCRTT33WBosDt/+gV5qmUEzpnfT3H9VvFq689GXRL46+GlsONt70py6m8Fo7IHOL3w==
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/lodash" "^4.14.168"

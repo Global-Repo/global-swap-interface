@@ -1,7 +1,7 @@
 import { CurrencyAmount, JSBI, Token, Trade } from '@duhd4h/global-sdk'
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { ArrowDown } from 'react-feather'
-import { CardBody, ArrowDownIcon, Button, IconButton, Text, Link, Flex } from '@duhd4h/global-uikit'
+import { CardBody, ArrowDownIcon, Button, IconButton, Text, Link } from '@duhd4h/global-uikit'
 import styled, { ThemeContext } from 'styled-components'
 import AddressInputPanel from 'components/AddressInputPanel'
 import Card, { GreyCard } from 'components/Card'
@@ -37,11 +37,6 @@ import useI18n from 'hooks/useI18n'
 import PageHeader from 'components/PageHeader'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import AppBody from '../AppBody'
-
-const StyledLink = styled(Link)`
-  display: inline;
-  color: ${({ theme }) => theme.colors.failure};
-`
 
 const Separator = styled.div`
   margin: auto;
@@ -98,11 +93,11 @@ const Swap = () => {
   // swap state
   const { independentField, typedValue, recipient } = useSwapState()
   const { v2Trade, currencyBalances, parsedAmount, currencies, inputError: swapInputError } = useDerivedSwapInfo()
-  const { wrapType, execute: onWrap, inputError: wrapInputError } = useWrapCallback(
-    currencies[Field.INPUT],
-    currencies[Field.OUTPUT],
-    typedValue
-  )
+  const {
+    wrapType,
+    execute: onWrap,
+    inputError: wrapInputError,
+  } = useWrapCallback(currencies[Field.INPUT], currencies[Field.OUTPUT], typedValue)
   const showWrap: boolean = wrapType !== WrapType.NOT_APPLICABLE
   const trade = showWrap ? undefined : v2Trade
 
@@ -164,12 +159,7 @@ const Swap = () => {
     // Unset disableSwap state if the swap inputs & outputs dont match disabledSwaps
     setDisableSwap(false)
     return undefined
-  }, [
-    currencies,
-    hasPoppedModal,
-    modalCountdownSecondsRemaining,
-    interruptRedirectCountdown,
-  ])
+  }, [currencies, hasPoppedModal, modalCountdownSecondsRemaining, interruptRedirectCountdown])
 
   const parsedAmounts = showWrap
     ? {
@@ -484,17 +474,6 @@ const Swap = () => {
               )}
             </AutoColumn>
             <BottomGrouping>
-              {disableSwap && (
-                <Flex alignItems="center" justifyContent="center" mb="1rem">
-                  <Text color="failure">
-                    Please use{' '}
-                    <StyledLink external href="https://exchange.pancakeswap.finance">
-                      PancakeSwap V2
-                    </StyledLink>{' '}
-                    to make this trade
-                  </Text>
-                </Flex>
-              )}
               {!account ? (
                 <ConnectWalletButton width="100%" />
               ) : showWrap ? (

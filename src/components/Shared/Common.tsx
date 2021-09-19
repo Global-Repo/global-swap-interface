@@ -47,6 +47,28 @@ export const StyledInternalLink = styled(Link)`
   }
 `
 
+export const StyledGradientLink = styled(Link)`
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  background: linear-gradient(to right, #e94e2c, #529cd6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  :hover {
+    text-decoration: underline;
+  }
+
+  :focus {
+    outline: none;
+    text-decoration: underline;
+  }
+
+  :active {
+    text-decoration: none;
+  }
+`
+
 const StyledLink = styled.a`
   text-decoration: none;
   cursor: pointer;
