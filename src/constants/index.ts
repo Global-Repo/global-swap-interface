@@ -7,6 +7,13 @@ type ChainTokenList = {
   readonly [chainId in ChainId]: Token[]
 }
 
+export const GLOBAL = new Token(
+  ChainId.MAINNET,
+  '0xe5eEb81e563aF8e92FBbeDD868500958f3D5f720',
+  18,
+  'GLB',
+  'GLOBAL Token'
+)
 export const CAKE = new Token(
   ChainId.MAINNET,
   '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
@@ -67,6 +74,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
   [ChainId.MAINNET]: [
+    [GLOBAL, WBNB],
     [CAKE, WBNB],
     [BUSD, USDT],
     [DAI, USDT],
