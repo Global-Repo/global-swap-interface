@@ -3,8 +3,8 @@ import { useTradeExactIn } from 'hooks/Trades'
 import { tryParseAmount } from 'state/swap/hooks'
 
 const useGetGlobalBusdLpPrice = () => {
-  const globalAddress = '0xe5eEb81e563aF8e92FBbeDD868500958f3D5f720'
-  const busdAddress = '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee'
+  const globalAddress = '0xC8d439D3B72280801d64eB371fe58Fede1a556ae'
+  const busdAddress = '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56'
   const inputCurrency = useCurrency(globalAddress)
   const outputCurrency = useCurrency(busdAddress)
   const parsedAmount = tryParseAmount('1', inputCurrency ?? undefined)
