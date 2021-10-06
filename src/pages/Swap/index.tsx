@@ -44,6 +44,14 @@ const Separator = styled.div`
   height: 2px;
   background: linear-gradient(90deg, #e94e2c, #529cd6);
 `
+const Title = styled.div`
+  color: white;
+  font-family: 'Poppins';
+  font-size: 30px;
+  margin-bottom: 50px;
+  font-weight: 600;
+`
+
 
 const Swap = () => {
   const loadedUrlParams = useDefaultsFromURLSearch()
@@ -344,6 +352,7 @@ const Swap = () => {
       />
       <SafeMoonWarningModal isOpen={transactionWarning.selectedToken === 'SAFEMOON'} onConfirm={handleConfirmWarning} />
       <CardNav />
+      <Title>Best swapping fees in the market!</Title>
       <AppBody>
         <Wrapper id="swap-page">
           <ConfirmSwapModal
