@@ -1,5 +1,5 @@
 import React, { useContext, useMemo } from 'react'
-import { ThemeContext } from 'styled-components'
+import styled, { ThemeContext } from 'styled-components'
 import { Pair } from '@duhd4h/global-sdk'
 import { Button, CardBody, GradientBorderBox, Text } from '@duhd4h/global-uikit'
 import CardNav from 'components/CardNav'
@@ -19,6 +19,14 @@ import { Dots } from 'components/swap/styleds'
 import useI18n from 'hooks/useI18n'
 import PageHeader from 'components/PageHeader'
 import AppBody from '../AppBody'
+
+const Title = styled.div`
+  color: white;
+  font-family: 'Poppins';
+  font-size: 30px;
+  margin-bottom: 50px;
+  font-weight: 600;
+`
 
 export default function Pool() {
   const theme = useContext(ThemeContext)
@@ -58,6 +66,7 @@ export default function Pool() {
   return (
     <Container>
       <CardNav activeIndex={1} />
+      <Title>Best swapping fees in the market!</Title>
       <AppBody>
         <PageHeader
           title={TranslateString(262, 'Liquidity')}
