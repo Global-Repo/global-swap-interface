@@ -350,7 +350,7 @@ const Swap = () => {
         transactionType={transactionWarning.purchaseType}
         onConfirm={handleConfirmWarning}
       />
-      <SafeMoonWarningModal isOpen={transactionWarning.selectedToken === 'SAFEMOON'} onConfirm={handleConfirmWarning} />
+      <SafeMoonWarningModal isOpen={transactionWarning.selectedToken === 'GLOBAL'} onConfirm={handleConfirmWarning} />
       <CardNav />
       <Title>Best swapping fees in the market!</Title>
       <AppBody>
