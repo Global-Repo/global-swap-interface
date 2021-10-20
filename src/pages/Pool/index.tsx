@@ -19,6 +19,9 @@ import { Dots } from 'components/swap/styleds'
 import useI18n from 'hooks/useI18n'
 import PageHeader from 'components/PageHeader'
 import AppBody from '../AppBody'
+import {ReactComponent as GlobbyIMG} from '../../assets/globi_hug.svg'
+import {ReactComponent as GlobbyIZQ} from '../../assets/globi_brazo_izq.svg'
+import {ReactComponent as GlobbyDER} from '../../assets/globi_brazo_der.svg'
 
 const Title = styled.div`
   color: white;
@@ -67,6 +70,10 @@ export default function Pool() {
     <Container>
       <CardNav activeIndex={1} />
       <Title>Best swapping fees in the market!</Title>
+      <Globby>
+        <GlobbyIMG id="customSvg"/>
+        <GlobbyIZQ id="customIzq"/>
+        <GlobbyDER id="customDer"/>
       <AppBody>
         <PageHeader
           title={TranslateString(262, 'Liquidity')}
@@ -130,6 +137,36 @@ export default function Pool() {
           </CardBody>
         </AutoColumn>
       </AppBody>
+      </Globby>
     </Container>
   )
 }
+
+const Globby = styled.div`
+  margin-top:220px;
+  position:relative;
+  object-fit:contain;
+  width:436px;
+
+  #customSvg{
+    height:600px;
+    position:absolute;
+    width:522px;
+    top:-240px;
+    left:-45px;
+  }
+
+  #customIzq{
+    position:absolute;
+    top:66px;
+    left:-45px;
+    z-index:2;
+  }
+
+  #customDer{
+    position:absolute;
+    right:-41px;
+    top:32px;
+    z-index:2;
+  }
+`

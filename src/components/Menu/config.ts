@@ -25,15 +25,15 @@ const config: MenuEntry[] = [
     href: BASE_MAIN_FRONTEND_URL_FARMS,
   },
   {
-    label: 'Stake Global',
+    label: 'Pools',
     href: BASE_MAIN_FRONTEND_URL_POOLS_GLOBAL,
   },
+  // {
+  //   label: 'Stake Token',
+  //   href: BASE_MAIN_FRONTEND_URL_POOLS_TOKEN,
+  // },
   {
-    label: 'Stake Token',
-    href: BASE_MAIN_FRONTEND_URL_POOLS_TOKEN,
-  },
-  {
-    label: 'Vaults',
+    label: 'Optimizer',
     href: BASE_MAIN_FRONTEND_URL_VAULTS,
   },
   {
