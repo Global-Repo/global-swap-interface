@@ -37,6 +37,9 @@ import useI18n from 'hooks/useI18n'
 import PageHeader from 'components/PageHeader'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import AppBody from '../AppBody'
+import {ReactComponent as GlobbyIMG} from '../../assets/globi_hug.svg'
+import {ReactComponent as GlobbyIZQ} from '../../assets/globi_brazo_izq.svg'
+import {ReactComponent as GlobbyDER} from '../../assets/globi_brazo_der.svg'
 
 const Separator = styled.div`
   margin: auto;
@@ -350,9 +353,13 @@ const Swap = () => {
         transactionType={transactionWarning.purchaseType}
         onConfirm={handleConfirmWarning}
       />
-      <SafeMoonWarningModal isOpen={transactionWarning.selectedToken === 'SAFEMOON'} onConfirm={handleConfirmWarning} />
+      <SafeMoonWarningModal isOpen={transactionWarning.selectedToken === 'GLOBAL'} onConfirm={handleConfirmWarning} />
       <CardNav />
       <Title>Best swapping fees in the market!</Title>
+      <Globby>
+        <GlobbyIMG id="customSvg"/>
+        <GlobbyIZQ id="customIzq"/>
+        <GlobbyDER id="customDer"/>
       <AppBody>
         <Wrapper id="swap-page">
           <ConfirmSwapModal
@@ -557,9 +564,39 @@ const Swap = () => {
           </CardBody>
         </Wrapper>
       </AppBody>
+      </Globby>
       <AdvancedSwapDetailsDropdown trade={trade} />
     </Container>
   )
 }
 
 export default Swap
+
+const Globby = styled.div`
+  margin-top:220px;
+  position:relative;
+  object-fit:contain;
+  width:436px;
+
+  #customSvg{
+    height:600px;
+    position:absolute;
+    width:522px;
+    top:-240px;
+    left:-45px;
+  }
+
+  #customIzq{
+    position:absolute;
+    top:66px;
+    left:-45px;
+    z-index:2;
+  }
+
+  #customDer{
+    position:absolute;
+    right:-41px;
+    top:32px;
+    z-index:2;
+  }
+`

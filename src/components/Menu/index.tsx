@@ -6,7 +6,8 @@ import { LanguageContext } from 'hooks/LanguageContext'
 import useTheme from 'hooks/useTheme'
 import useGetLocalProfile from 'hooks/useGetLocalProfile'
 import useAuth from 'hooks/useAuth'
-import useGetGlobalBusdLpPrice from 'utils/useGetGlobalBusdLpPrice'
+import useGetCustomPrice from 'utils/useGetCustomPrice'
+// import useGetGlobalBusdLpPrice from 'utils/useGetGlobalBusdLpPrice'
 import links from './config'
 
 const Menu: React.FC = (props) => {
@@ -14,7 +15,7 @@ const Menu: React.FC = (props) => {
   const { login, logout } = useAuth()
   const { selectedLanguage, setSelectedLanguage } = useContext(LanguageContext)
   const { isDark, toggleTheme } = useTheme()
-  const globalBusdPrice = useGetGlobalBusdLpPrice()
+  const globalBusdPrice = useGetCustomPrice()
   const profile = useGetLocalProfile()
 
   return (
