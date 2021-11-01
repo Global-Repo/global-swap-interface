@@ -44,16 +44,28 @@ import {ReactComponent as GlobbyDER} from '../../assets/globi_brazo_der.svg'
 const Separator = styled.div`
   margin: auto;
   width: 90%;
-  height: 2px;
-  background: linear-gradient(90deg, #e94e2c, #529cd6);
+  height: 1px;
+  background: #F0ECF4;
 `
 const Title = styled.div`
-  color: white;
-  font-family: 'Poppins';
-  font-size: 30px;
+  color: black;
+  font-size: 35px;
   margin-bottom: 50px;
   font-weight: 600;
 `
+const AppBodyStyle = styled(AppBody)`
+  ${({ theme }) => theme.mediaQueries.sm} {
+   
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    
+  }
+`
+
+const IconButtonMiddleStyle = styled(IconButton)`
+   background:red;
+`
+
 
 
 const Swap = () => {
@@ -343,7 +355,8 @@ const Swap = () => {
 
   return (
     <Container>
-      <TokenWarningModal
+      <Title>Best swapping fees in the market!</Title>
+       <TokenWarningModal
         isOpen={urlLoadedTokens.length > 0 && !dismissTokenWarning}
         tokens={urlLoadedTokens}
         onConfirm={handleConfirmTokenWarning}
@@ -355,12 +368,8 @@ const Swap = () => {
       />
       <SafeMoonWarningModal isOpen={transactionWarning.selectedToken === 'GLOBAL'} onConfirm={handleConfirmWarning} />
       <CardNav />
-      <Title>Best swapping fees in the market!</Title>
       <Globby>
-        <GlobbyIMG id="customSvg"/>
-        <GlobbyIZQ id="customIzq"/>
-        <GlobbyDER id="customDer"/>
-      <AppBody>
+      <AppBodyStyle>
         <Wrapper id="swap-page">
           <ConfirmSwapModal
             isOpen={showConfirm}
@@ -400,7 +409,7 @@ const Swap = () => {
               <AutoColumn justify="space-between">
                 <AutoRow justify={isExpertMode ? 'space-between' : 'center'} style={{ padding: '0 1rem' }}>
                   <ArrowWrapper clickable>
-                    <IconButton
+                    <IconButtonMiddleStyle
                       variant="full_gradient"
                       onClick={() => {
                         setApprovalSubmitted(false) // reset 2 step UI for approvals
@@ -410,7 +419,7 @@ const Swap = () => {
                       scale="sm"
                     >
                       <ArrowDownIcon color="white" width="24px" />
-                    </IconButton>
+                    </IconButtonMiddleStyle>
                   </ArrowWrapper>
                   {recipient === null && !showWrap && isExpertMode ? (
                     <LinkStyledButton id="add-recipient-button" onClick={() => onChangeRecipient('')}>
@@ -463,8 +472,8 @@ const Swap = () => {
                     )}
                     {allowedSlippage !== INITIAL_ALLOWED_SLIPPAGE && (
                       <RowBetween align="center">
-                        <Text fontSize="14px">{TranslateString(88, 'Slippage Tolerance')}</Text>
-                        <Text fontSize="14px">{allowedSlippage / 100}%</Text>
+                        <Text fontSize="14px" color="black">{TranslateString(88, 'Slippage Tolerance')}</Text>
+                        <Text fontSize="14px" color="black">{allowedSlippage / 100}%</Text>
                       </RowBetween>
                     )}
                   </AutoColumn>
@@ -473,12 +482,16 @@ const Swap = () => {
             </AutoColumn>
             <BottomGrouping>
               {!account ? (
+
                 <ConnectWalletButton width="100%" />
+
               ) : showWrap ? (
-                <Button disabled={Boolean(wrapInputError)} onClick={onWrap} width="100%">
+
+                <Button id="swap-button" disabled={Boolean(wrapInputError)} onClick={onWrap} width="100%">
                   {wrapInputError ??
                     (wrapType === WrapType.WRAP ? 'Wrap' : wrapType === WrapType.UNWRAP ? 'Unwrap' : null)}
                 </Button>
+
               ) : noRoute && userHasSpecifiedInputOutput ? (
                 <GreyCard style={{ textAlign: 'center' }}>
                   <Text mb="4px">{TranslateString(1194, 'Insufficient liquidity for this trade.')}</Text>
@@ -563,7 +576,7 @@ const Swap = () => {
             </BottomGrouping>
           </CardBody>
         </Wrapper>
-      </AppBody>
+      </AppBodyStyle>
       </Globby>
       <AdvancedSwapDetailsDropdown trade={trade} />
     </Container>
@@ -573,10 +586,15 @@ const Swap = () => {
 export default Swap
 
 const Globby = styled.div`
-  margin-top:220px;
+   
+  :before {
+    content:none;
+  }
+  
   position:relative;
   object-fit:contain;
   width:436px;
+  background:white;
 
   #customSvg{
     height:600px;
@@ -599,4 +617,29 @@ const Globby = styled.div`
     top:32px;
     z-index:2;
   }
+
+  #swap-page{
+    background: #FFFFFF;
+    box-shadow: 0px 2px 6px rgba(179, 165, 209, 0.15), 0px 4px 40px rgba(179, 165, 209, 0.3);
+    border-radius: 32px;
+  }
+
+  #swap-button{
+    background: red;
+    color:white;
+    border-radius: 16px;
+  }
+
+  > div > div{
+    background:white; 
+    box-shadow: 0px 2px 6px rgba(179, 165, 209, 0.15), 0px 4px 40px rgba(179, 165, 209, 0.3);
+    border-radius: 32px;
+  }
+
+  > div:before {
+    content:none; 
+  }
+
+
+
 `

@@ -19,6 +19,18 @@ const Details = styled.div`
   flex: 1;
 `
 
+const TextDescriptionStyle = styled(Text)`
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  color: #A099A5;
+`
+const IconButtonStyle = styled(IconButton)`
+  background: #F0ECF4;
+  border-radius: 12px;
+  margin-right:3px;
+`
+
 const PageHeader = ({ title, description, children }: PageHeaderProps) => {
   const TranslateString = useI18n()
   const [onPresentSettings] = useModal(<SettingsModal translateString={TranslateString} />)
@@ -28,23 +40,23 @@ const PageHeader = ({ title, description, children }: PageHeaderProps) => {
     <StyledPageHeader>
       <Flex alignItems="center">
         <Details>
-          <Heading mb="8px">{title}</Heading>
+          <Heading color="black" fontSize="28px" mb="8px">{title}</Heading>
           {description && (
             <Text color="textSubtle" fontSize="14px">
               {description}
             </Text>
           )}
         </Details>
-        <IconButton variant="text" onClick={onPresentSettings} title={TranslateString(1200, 'Settings')}>
-          <TuneIcon width="24px" color="white" />
-        </IconButton>
-        <IconButton
+        <IconButtonStyle variant="text" onClick={onPresentSettings} title={TranslateString(1200, 'Settings')}>
+          <TuneIcon width="24px" color="black" />
+        </IconButtonStyle>
+        <IconButtonStyle
           variant="text"
           onClick={onPresentRecentTransactions}
           title={TranslateString(1202, 'Recent transactions')}
         >
-          <HistoryIcon width="24px" color="white" />
-        </IconButton>
+          <HistoryIcon width="24px" color="black" />
+        </IconButtonStyle>
       </Flex>
       {children && <Text mt="16px">{children}</Text>}
     </StyledPageHeader>

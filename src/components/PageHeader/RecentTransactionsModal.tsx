@@ -5,6 +5,30 @@ import { getBscScanLink } from 'utils'
 import { isTransactionRecent, useAllTransactions } from 'state/transactions/hooks'
 import { TransactionDetails } from 'state/transactions/reducer'
 import Loader from 'components/Loader'
+import styled, { ThemeContext } from 'styled-components'
+
+
+
+const ModalStyles = styled(Modal)`
+  background: #FFFFFF;
+  box-shadow: 0px 4px 40px rgba(179, 165, 209, 0.3);
+  border-radius: 32px;
+  border:0px;
+  h2  {
+   color:black;
+  }
+  #close_dialog {
+   background: #F0ECF4;
+   border-radius: 10px;
+  }
+`
+
+const ButtonGlobalStyle = styled(Button)`
+  background: #FF0000;
+  border-radius: 10px;
+  color:white
+`
+
 
 type RecentTransactionsModalProps = {
   onDismiss?: () => void
@@ -41,25 +65,25 @@ const RecentTransactionsModal = ({ onDismiss = defaultOnDismiss, translateString
   }, [allTransactions])
 
   return (
-    <Modal title={translateString(1202, 'Recent transactions')} onDismiss={onDismiss}>
+    <ModalStyles title={translateString(1202, 'Recent transactions')} onDismiss={onDismiss}>
       {!account && (
         <Flex justifyContent="center" flexDirection="column" alignItems="center">
-          <Text mb="8px" bold>
+          <Text color="black" mb="8px" bold>
             Please connect your wallet to view your recent transactions
           </Text>
-          <Button variant="tertiary" scale="sm" onClick={onDismiss}>
+          <ButtonGlobalStyle variant="tertiary" scale="sm" onClick={onDismiss}>
             Close
-          </Button>
+          </ButtonGlobalStyle>
         </Flex>
       )}
       {account && chainId && sortedRecentTransactions.length === 0 && (
         <Flex justifyContent="center" flexDirection="column" alignItems="center">
-          <Text mb="8px" bold>
+          <Text color="black" mb="8px" bold>
             No recent transactions
           </Text>
-          <Button variant="tertiary" scale="sm" onClick={onDismiss}>
+          <ButtonGlobalStyle variant="tertiary" scale="sm" onClick={onDismiss}>
             Close
-          </Button>
+          </ButtonGlobalStyle>
         </Flex>
       )}
       {account &&
@@ -79,7 +103,7 @@ const RecentTransactionsModal = ({ onDismiss = defaultOnDismiss, translateString
             </>
           )
         })}
-    </Modal>
+    </ModalStyles>
   )
 }
 
