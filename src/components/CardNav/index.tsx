@@ -20,6 +20,9 @@ const StyledNav = styled.div`
     box-shadow:none;
     font-size: 16px;
   }
+  a.cTsiiO {
+    background: #F0ECF4;
+  }
 
 `
 

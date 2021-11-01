@@ -30,6 +30,15 @@ const Options = styled.div`
   }
 `
 
+const TextDescriptionFine = styled(Text)`
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+  color: #A099A5;
+`
+
 const predefinedValues = [
   { label: '0.1%', value: 0.1 },
   { label: '0.5%', value: 0.5 },
@@ -76,7 +85,7 @@ const SlippageToleranceSettings = ({ translateString }: SlippageToleranceSetting
   return (
     <Box mb="16px">
       <Flex alignItems="center" mb="8px">
-        <Text bold>{translateString(88, 'Slippage tolerance')}</Text>
+        <TextDescriptionFine color="black" bold>{translateString(88, 'Slippage tolerance')}</TextDescriptionFine>
         <QuestionHelper
           text={translateString(
             186,
@@ -112,7 +121,7 @@ const SlippageToleranceSettings = ({ translateString }: SlippageToleranceSetting
             />
           </Option>
           <Option>
-            <Text fontSize="18px">%</Text>
+            <Text color="black" fontSize="18px">%</Text>
           </Option>
         </Flex>
       </Options>
