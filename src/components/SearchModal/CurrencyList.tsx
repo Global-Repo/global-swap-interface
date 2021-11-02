@@ -114,10 +114,10 @@ function CurrencyRow({
     >
       <CurrencyLogo currency={currency} size="24px" />
       <Column>
-        <Text title={currency.name}>{currency.symbol}</Text>
+        <Text color="black" title={currency.name}>{currency.symbol}</Text>
         <FadedSpan>
           {!isOnSelectedList && customAdded && !(currency instanceof WrappedTokenInfo) ? (
-            <Text>
+            <Text color="black">
               Added by user
               <LinkStyledButton
                 onClick={(event) => {

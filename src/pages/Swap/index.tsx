@@ -498,7 +498,7 @@ const Swap = () => {
                 </GreyCard>
               ) : showApproveFlow ? (
                 <RowBetween>
-                  <Button
+                  <Button id="swap-button"
                     onClick={approveCallback}
                     disabled={disableSwap || approval !== ApprovalState.NOT_APPROVED || approvalSubmitted}
                     style={{ width: '48%' }}
@@ -514,7 +514,7 @@ const Swap = () => {
                       `Approve ${currencies[Field.INPUT]?.symbol}`
                     )}
                   </Button>
-                  <Button
+                  <Button 
                     onClick={() => {
                       if (isExpertMode) {
                         handleSwap()
