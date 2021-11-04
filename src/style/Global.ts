@@ -55,8 +55,6 @@ const GlobalStyle = createGlobalStyle`
   nav > div > div svg {
     fill:#000000;
   }
-
-
   // connect wallet styles 
   #connect_wallet_modal, #modal_wallet_open {
     background: #FFFFFF;
