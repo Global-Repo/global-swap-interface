@@ -1,6 +1,6 @@
 import { ChainId, JSBI, Percent, Token, WETH } from '@duhd4h/global-sdk'
 
-export const ROUTER_ADDRESS = '0x36a1847cdA738E3EAE6808d8AB92dC3dB5093e87'
+export const ROUTER_ADDRESS = '0x89C940d38dc0FFF95046977d23d642fBF675eD4c'
 
 // a list of tokens by chain
 type ChainTokenList = {
@@ -9,14 +9,14 @@ type ChainTokenList = {
 
 export const GLOBAL = new Token(
   ChainId.MAINNET,
-  '0xC8d439D3B72280801d64eB371fe58Fede1a556ae',
+  '0xd9a0e9cA8fB98Bb9e57723B18699D36da146CaaB',
   18,
   'GLB',
   'GLOBAL Token'
 )
 export const CAKE = new Token(
   ChainId.MAINNET,
-  '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+  '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
   18,
   'CAKE',
   'PancakeSwap Token'
