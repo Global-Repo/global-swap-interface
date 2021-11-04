@@ -56,6 +56,23 @@ const GlobalStyle = createGlobalStyle`
     fill:#000000;
   }
 
+  nav > div > div > div > div > a.active > div {
+    color: red;
+  }
+  nav > div > div > div > div > a > div {
+    color: black;
+    font-weight: 600;
+  }
+  nav > div > div > div > div > button {
+    background: #FF0000 !important;
+    font-weight: 400 !important;
+    border-radius: 10px!important;
+    box-shadow: none !important;
+  }
+
+  nav > div > div > div > div {
+    border-bottom: 0px !important;
+  }
 
   // connect wallet styles 
   #connect_wallet_modal, #modal_wallet_open {
