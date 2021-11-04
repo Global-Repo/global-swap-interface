@@ -13,6 +13,16 @@ const Field = styled.div`
   }
 `
 
+const TextDescriptionFine = styled(Text)`
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+  color: #A099A5;
+`
+
+
 type TransactionDeadlineSettingModalProps = {
   translateString: (translationId: number, fallback: string) => string
 }
@@ -45,14 +55,14 @@ const TransactionDeadlineSetting = ({ translateString }: TransactionDeadlineSett
   return (
     <Box mb="16px">
       <Flex alignItems="center" mb="8px">
-        <Text bold>{translateString(90, 'Transaction deadline')}</Text>
+        <TextDescriptionFine>{translateString(90, 'Transaction deadline')}</TextDescriptionFine>
         <QuestionHelper
           text={translateString(188, 'Your transaction will revert if it is pending for more than this long.')}
         />
       </Flex>
       <Field>
         <Input type="number" step="1" min="1" value={value} onChange={handleChange} />
-        <Text fontSize="14px" ml="8px">
+        <Text color="black" fontSize="14px" ml="8px">
           Minutes
         </Text>
       </Field>
