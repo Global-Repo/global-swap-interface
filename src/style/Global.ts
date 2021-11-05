@@ -4,7 +4,29 @@ const GlobalStyle = createGlobalStyle`
   body {
     //background: linear-gradient(45deg, #1748a0, #0b2761 ,#1c102b);
     //background-color: ${({ theme }) => theme.colors.background};
-
+    .wZbdH {
+      background-color: #F8F6FB !important;
+      div {
+        color: #090e1a !important;
+      }
+      .kzhJaq {
+        border: none;
+        background-color: #F8F6FB !important;
+        .krDwpZ {
+          a {
+            svg {
+              fill: #2da9ea
+            }
+          }
+        }
+      }
+    }
+    nav {
+      background-color: #F8F6FB !important;
+      .bMmavD {
+          fill: #2da9ea
+      }
+    }
     img {
       height: auto;
       max-width: 100%;

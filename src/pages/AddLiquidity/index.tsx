@@ -36,6 +36,11 @@ import { Dots, Wrapper } from '../Pool/styleds'
 import { ConfirmAddModalBottom } from './ConfirmAddModalBottom'
 import { PoolPriceBar } from './PoolPriceBar'
 import { ROUTER_ADDRESS } from '../../constants'
+import styled from 'styled-components'
+
+const UIKitTextWrapper = styled(UIKitText)`
+  color: #c0c0c0;
+`
 
 export default function AddLiquidity({
   match: {
@@ -198,9 +203,9 @@ export default function AddLiquidity({
       <AutoColumn gap="20px">
         <LightCard mt="20px" borderRadius="20px">
           <RowFlat>
-            <UIKitText fontSize="48px" mr="8px">
+            <UIKitTextWrapper fontSize="48px" mr="8px">
               {`${currencies[Field.CURRENCY_A]?.symbol}/${currencies[Field.CURRENCY_B]?.symbol}`}
-            </UIKitText>
+            </UIKitTextWrapper>
             <DoubleCurrencyLogo
               currency0={currencies[Field.CURRENCY_A]}
               currency1={currencies[Field.CURRENCY_B]}
@@ -212,9 +217,9 @@ export default function AddLiquidity({
     ) : (
       <AutoColumn gap="20px">
         <RowFlat style={{ marginTop: '20px' }}>
-          <UIKitText fontSize="48px" mr="8px">
+          <UIKitTextWrapper fontSize="48px" mr="8px">
             {liquidityMinted?.toSignificant(6)}
-          </UIKitText>
+          </UIKitTextWrapper>
           <DoubleCurrencyLogo
             currency0={currencies[Field.CURRENCY_A]}
             currency1={currencies[Field.CURRENCY_B]}
@@ -222,15 +227,15 @@ export default function AddLiquidity({
           />
         </RowFlat>
         <Row>
-          <UIKitText fontSize="24px">
+          <UIKitTextWrapper fontSize="24px">
             {`${currencies[Field.CURRENCY_A]?.symbol}/${currencies[Field.CURRENCY_B]?.symbol} Pool Tokens`}
-          </UIKitText>
+          </UIKitTextWrapper>
         </Row>
-        <UIKitText small textAlign="left" padding="8px 0 0 0 " style={{ fontStyle: 'italic' }}>
+        <UIKitTextWrapper small textAlign="left" padding="8px 0 0 0 " style={{ fontStyle: 'italic' }}>
           {`Output is estimated. If the price changes by more than ${
             allowedSlippage / 100
           }% your transaction will revert.`}
-        </UIKitText>
+        </UIKitTextWrapper>
       </AutoColumn>
     )
   }
@@ -319,13 +324,13 @@ export default function AddLiquidity({
                 <ColumnCenter>
                   <Pane>
                     <AutoColumn gap="12px">
-                      <UIKitText>{TranslateString(1158, 'You are the first liquidity provider.')}</UIKitText>
-                      <UIKitText>
+                      <UIKitTextWrapper>{TranslateString(1158, 'You are the first liquidity provider.')}</UIKitTextWrapper>
+                      <UIKitTextWrapper>
                         {TranslateString(1160, 'The ratio of tokens you add will set the price of this pool.')}
-                      </UIKitText>
-                      <UIKitText>
+                      </UIKitTextWrapper>
+                      <UIKitTextWrapper>
                         {TranslateString(1162, 'Once you are happy with the rate click supply to review.')}
-                      </UIKitText>
+                      </UIKitTextWrapper>
                     </AutoColumn>
                   </Pane>
                 </ColumnCenter>
@@ -359,7 +364,7 @@ export default function AddLiquidity({
               />
               {currencies[Field.CURRENCY_A] && currencies[Field.CURRENCY_B] && pairState !== PairState.INVALID && (
                 <div>
-                  <UIKitText
+                  <UIKitTextWrapper
                     style={{ textTransform: 'uppercase', fontWeight: 600 }}
                     color="textSubtle"
                     fontSize="12px"
@@ -368,7 +373,7 @@ export default function AddLiquidity({
                     {noLiquidity
                       ? TranslateString(1164, 'Initial prices and pool share')
                       : TranslateString(1166, 'Prices and pool share')}
-                  </UIKitText>
+                  </UIKitTextWrapper>
                   <Pane>
                     <PoolPriceBar
                       currencies={currencies}

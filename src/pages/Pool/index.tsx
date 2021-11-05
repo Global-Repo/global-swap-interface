@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React, { useContext, useMemo } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import { Pair } from '@duhd4h/global-sdk'
@@ -29,6 +30,39 @@ const Title = styled.div`
   font-size: 30px;
   margin-bottom: 50px;
   font-weight: 600;
+`
+
+const ButtonWrapper = styled(Button)`
+  background-color: #ff0000;
+  
+    align-items: center;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0px -1px 0px 0px rgba(14,14,44,0.4) inset;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    opacity: 1;
+    outline: 0;
+    transition: background-color 0.2s,opacity 0.2s;
+    height: 48px;
+    padding: 0 24px;
+    color: white;
+    margin-bottom: 16px;
+`
+
+const GradientWrapper = styled.div`
+    background-color: #F0ECF4;
+    border-radius: 16px;
+    padding: 40px;
+    display: inline-flex;
+    position: relative;
+    z-index: 0;
 `
 
 export default function Pool() {
@@ -68,26 +102,26 @@ export default function Pool() {
 
   return (
     <Container>
+      <Title color="black">Best swapping fees in the market!</Title>
       <CardNav activeIndex={1} />
-      <Title>Best swapping fees in the market!</Title>
       <Globby>
-        <GlobbyIMG id="customSvg"/>
-        <GlobbyIZQ id="customIzq"/>
-        <GlobbyDER id="customDer"/>
+        {/*<GlobbyIMG id="customSvg"/>*/}
+        {/*<GlobbyIZQ id="customIzq"/>*/}
+        {/*<GlobbyDER id="customDer"/>*/}
       <AppBody>
         <PageHeader
           title={TranslateString(262, 'Liquidity')}
           description={TranslateString(1168, 'Add liquidity to receive LP tokens')}
         >
-          <Button id="join-pool-button" as={Link} to="/add/BNB" mb="16px" variant="full_gradient">
+          <ButtonWrapper id="join-pool-button" as={Link} to="/add/BNB" mb="16px" variant="danger">
             {TranslateString(168, 'Add Liquidity')}
-          </Button>
+          </ButtonWrapper>
         </PageHeader>
         <AutoColumn gap="lg" justify="center">
           <CardBody>
             <AutoColumn gap="12px" style={{ width: '100%' }}>
               <RowBetween padding="0 8px">
-                <Text color={theme.colors.text}>{TranslateString(107, 'Your Liquidity')}</Text>
+                <Text color="black">{TranslateString(107, 'Your Liquidity')}</Text>
                 <Question
                   text={TranslateString(
                     1170,
@@ -97,17 +131,17 @@ export default function Pool() {
               </RowBetween>
 
               {!account ? (
-                <GradientBorderBox style={{ padding: '40px' }}>
+                <GradientWrapper style={{ padding: '40px' }}>
                   <Text color="textDisabled" textAlign="center">
                     {TranslateString(156, 'Connect to a wallet to view your liquidity.')}
                   </Text>
-                </GradientBorderBox>
+                </GradientWrapper>
               ) : v2IsLoading ? (
-                <GradientBorderBox style={{ padding: '40px' }}>
+                <GradientWrapper style={{ padding: '40px' }}>
                   <Text color="textDisabled" textAlign="center">
                     <Dots>Loading</Dots>
                   </Text>
-                </GradientBorderBox>
+                </GradientWrapper>
               ) : allV2PairsWithLiquidity?.length > 0 ? (
                 <>
                   {allV2PairsWithLiquidity.map((v2Pair) => (
@@ -115,21 +149,21 @@ export default function Pool() {
                   ))}
                 </>
               ) : (
-                <GradientBorderBox style={{ padding: '40px' }}>
+                <GradientWrapper style={{ padding: '40px' }}>
                   <Text color="textDisabled" textAlign="center">
                     {TranslateString(104, 'No liquidity found.')}
                   </Text>
-                </GradientBorderBox>
+                </GradientWrapper>
               )}
 
               <div>
-                <Text fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
+                <Text color="textDisabled" fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
                   {TranslateString(106, "Don't see a pool you joined?")}{' '}
                   <StyledGradientLink id="import-pool-link" to="/find">
                     {TranslateString(108, 'Import it.')}
                   </StyledGradientLink>
                 </Text>
-                <Text fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
+                <Text color="textDisabled" fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
                   {TranslateString(1172, 'Or, if you staked your LP tokens in a farm, unstake them to see them here.')}
                 </Text>
               </div>
@@ -143,7 +177,7 @@ export default function Pool() {
 }
 
 const Globby = styled.div`
-  margin-top:220px;
+  //margin-top:220px;
   position:relative;
   object-fit:contain;
   width:436px;
