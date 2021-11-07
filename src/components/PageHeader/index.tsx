@@ -23,7 +23,7 @@ const TextDescriptionStyle = styled(Text)`
   font-weight: 500;
   font-size: 14px;
   display: flex;
-  color: #A099A5;
+  color: #69626E;
 `
 const IconButtonStyle = styled(IconButton)`
   background: #F0ECF4;
@@ -42,7 +42,7 @@ const PageHeader = ({ title, description, children }: PageHeaderProps) => {
         <Details>
           <Heading color="black" fontSize="28px" mb="8px">{title}</Heading>
           {description && (
-            <Text color="#A099A5" fontSize="14px">
+            <Text color="#69626E" fontSize="14px">
               {description}
             </Text>
           )}

@@ -105,9 +105,9 @@ const GlobalStyle = createGlobalStyle`
     box-shadow: 0px 4px 40px rgb(179 165 209 / 30%);
     border-radius: 32px;
   }
-  #connect_wallet_modal > div > button {
+  /* #connect_wallet_modal > div > button {
     background: #F0ECF4;
-  }
+  } */
   #connect_wallet_modal > div > button > div {
     color: #000000;
   }

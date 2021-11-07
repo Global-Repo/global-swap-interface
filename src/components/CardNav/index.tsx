@@ -5,6 +5,7 @@ import { ButtonMenu, ButtonMenuItem } from '@duhd4h/global-uikit'
 import useI18n from 'hooks/useI18n'
 
 const StyledNav = styled.div`
+  z-index: 1;
   margin-bottom: 20px;
   background: #FFFFFF;
   box-shadow: 0px 2px 6px rgba(179, 165, 209, 0.15), 0px 4px 40px rgba(179, 165, 209, 0.3);
@@ -20,9 +21,9 @@ const StyledNav = styled.div`
     box-shadow:none;
     font-size: 16px;
   }
-  a.cTsiiO {
+  /* a.cTsiiO {
     background: #F0ECF4;
-  }
+  } */
 
 `
 
@@ -33,13 +34,14 @@ function Nav({ activeIndex = 0 }: { activeIndex?: number }) {
   return (
     <StyledNav>
       <ButtonMenu activeIndex={activeIndex} scale="md" variant="full_gradient">
-        <ButtonMenuItem id="swap-nav-link" to="/swap" as={Link}>
+        <ButtonMenuItem style={{ padding: '0 40px' }} id="swap-nav-link" to="/swap" as={Link}>
           {TranslateString(1142, 'Swap')}
         </ButtonMenuItem>
-        <ButtonMenuItem id="pool-nav-link" to="/pool" as={Link}>
+        <ButtonMenuItem style={{ padding: '0 40px' }} id="pool-nav-link" to="/pool" as={Link}>
           {TranslateString(262, 'Liquidity')}
         </ButtonMenuItem>
         <ButtonMenuItem
+          style={{ padding: '0 40px' }}
           id="pool-nav-link"
           as="a"
           href="https://www.binance.org/en/bridge?utm_source=BeGlobalSwap"

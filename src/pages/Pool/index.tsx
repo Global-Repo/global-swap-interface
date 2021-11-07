@@ -25,7 +25,7 @@ import {ReactComponent as GlobbyIZQ} from '../../assets/globi_brazo_izq.svg'
 import {ReactComponent as GlobbyDER} from '../../assets/globi_brazo_der.svg'
 
 const Title = styled.div`
-  color: white;
+  color: black;
   font-family: 'Poppins';
   font-size: 30px;
   margin-bottom: 50px;
@@ -103,8 +103,8 @@ export default function Pool() {
 
   return (
     <Container>
-      <Title colour="black">Best swapping fees in the market!</Title>
-
+      <Title color="black">Best swapping fees in the market!</Title>
+      <ImageRight/>
       <CardNav activeIndex={1} />
       <Globby>
         {/*<GlobbyIMG id="customSvg"/>*/}
@@ -134,7 +134,7 @@ export default function Pool() {
 
               {!account ? (
                 <GradientWrapper style={{ padding: '40px' }}>
-                  <Text color="textDisabled" textAlign="center">
+                  <Text color="black" textAlign="center">
                     {TranslateString(156, 'Connect to a wallet to view your liquidity.')}
                   </Text>
                 </GradientWrapper>
@@ -159,13 +159,13 @@ export default function Pool() {
               )}
 
               <div>
-                <Text color="#A099A5" fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
+                <Text color="#69626E" fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
                   {TranslateString(106, "Don't see a pool you joined?")}{' '}
                   <StyledGradientLink id="import-pool-link" to="/find">
                     {TranslateString(108, 'Import it.')}
                   </StyledGradientLink>
                 </Text>
-                <Text color="#A099A5" fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
+                <Text color="#69626E" fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
                   {TranslateString(1172, 'Or, if you staked your LP tokens in a farm, unstake them to see them here.')}
                 </Text>
               </div>
@@ -174,9 +174,27 @@ export default function Pool() {
         </AutoColumn>
       </AppBody>
       </Globby>
+      <ImageLeft />
     </Container>
   )
 }
+
+const ImageLeft = styled.div`
+  background-image: url("/images/groupL.png");
+  width: 272px;
+  height: 178px;
+  margin: -110px 0 0 -350px;
+`;
+
+const ImageRight = styled.div`
+  background-image: url("/images/groupR.png");
+  width: 152px;
+  height: 272px;
+  z-index: 0;
+  position: absolute;
+  margin: 50px 0 0 450px;
+`;
+
 
 const Globby = styled.div`
   //margin-top:220px;

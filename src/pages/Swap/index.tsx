@@ -40,6 +40,9 @@ import AppBody from '../AppBody'
 import {ReactComponent as GlobbyIMG} from '../../assets/globi_hug.svg'
 import {ReactComponent as GlobbyIZQ} from '../../assets/globi_brazo_izq.svg'
 import {ReactComponent as GlobbyDER} from '../../assets/globi_brazo_der.svg'
+import {ReactComponent as Block} from '../../assets/groupR.svg'
+import {ReactComponent as BlockL} from '../../assets/groupL.svg'
+// import {ReactComponent as BlockLeft} from '../../assets/groupL.png'
 
 const Separator = styled.div`
   margin: auto;
@@ -49,7 +52,7 @@ const Separator = styled.div`
 `
 const Title = styled.div`
   color: black;
-  font-size: 35px;
+  font-size: 30px;
   margin-bottom: 50px;
   font-weight: 600;
 `
@@ -355,7 +358,7 @@ const Swap = () => {
 
   return (
     <Container>
-      <Title>Best Swapping fees in the market!</Title>
+      <Title>Best swapping fees in the market!</Title>
        <TokenWarningModal
         isOpen={urlLoadedTokens.length > 0 && !dismissTokenWarning}
         tokens={urlLoadedTokens}
@@ -366,6 +369,7 @@ const Swap = () => {
         transactionType={transactionWarning.purchaseType}
         onConfirm={handleConfirmWarning}
       />
+      <ImageRight/>
       <SafeMoonWarningModal isOpen={transactionWarning.selectedToken === 'GLOBAL'} onConfirm={handleConfirmWarning} />
       <CardNav />
       <Globby>
@@ -578,12 +582,29 @@ const Swap = () => {
         </Wrapper>
       </AppBodyStyle>
       </Globby>
+      <ImageLeft />
       <AdvancedSwapDetailsDropdown trade={trade} />
     </Container>
   )
 }
 
 export default Swap
+
+const ImageLeft = styled.div`
+  background-image: url("/images/groupL.png");
+  width: 272px;
+  height: 178px;
+  margin: -110px 0 0 -350px;
+`;
+
+const ImageRight = styled.div`
+  background-image: url("/images/groupR.png");
+  width: 152px;
+  height: 272px;
+  z-index: 0;
+  position: absolute;
+  margin: 50px 0 0 450px;
+`;
 
 const Globby = styled.div`
    
@@ -594,7 +615,7 @@ const Globby = styled.div`
   position:relative;
   object-fit:contain;
   width:436px;
-  background:white;
+  background:transparent;
 
   #customSvg{
     height:600px;

@@ -36,7 +36,7 @@ const TextDescriptionFine = styled(Text)`
   line-height: 13px;
   display: flex;
   align-items: center;
-  color: #A099A5;
+  color: #69626E;
 `
 
 const predefinedValues = [
