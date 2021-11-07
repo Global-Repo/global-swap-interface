@@ -5,7 +5,7 @@ import { RowFixed } from '../Row'
 
 export const FilterWrapper = styled(RowFixed)`
   padding: 8px;
-  background-color: ${({ theme }) => theme.colors.invertedContrast};
+  background-color: #F4F0F8;
   color: ${({ theme }) => theme.colors.text};
   border-radius: 8px;
   user-select: none;
@@ -26,7 +26,7 @@ export default function SortButton({
 }) {
   return (
     <FilterWrapper onClick={toggleSortOrder}>
-      <Text fontSize="14px">{ascending ? '↑' : '↓'}</Text>
+      <Text style={{ color: 'black'}} fontSize="14px">{ascending ? '↑' : '↓'}</Text>
     </FilterWrapper>
   )
 }

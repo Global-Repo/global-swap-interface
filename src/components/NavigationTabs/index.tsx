@@ -15,12 +15,13 @@ const Tabs = styled.div`
 `
 
 const ActiveText = styled.div`
+  color: black;
   font-weight: 500;
   font-size: 20px;
 `
 
 const StyledArrowLeft = styled(ArrowLeft)`
-  color: ${({ theme }) => theme.colors.text};
+  color: black;
 `
 
 export function FindPoolTabs() {

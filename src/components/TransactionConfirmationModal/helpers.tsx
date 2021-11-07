@@ -17,7 +17,7 @@ export const ConfirmedIcon = styled(ColumnCenter)`
 `
 
 export const BottomSection = styled(Section)`
-  background-color: ${({ theme }) => theme.colors.invertedContrast};
+  background-color: #F0ECF4;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 `
@@ -41,9 +41,9 @@ type ContentHeaderProps = {
 
 export const ContentHeader = ({ children, onDismiss }: ContentHeaderProps) => (
   <StyledContentHeader>
-    <Heading>{children}</Heading>
+    <Heading style={{ color: 'black' }}>{children}</Heading>
     <IconButton onClick={onDismiss} variant="text">
-      <CloseIcon color="primary" />
+      <CloseIcon color="black" />
     </IconButton>
   </StyledContentHeader>
 )

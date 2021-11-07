@@ -24,39 +24,39 @@ export function ConfirmAddModalBottom({
   return (
     <>
       <RowBetween>
-        <Text>{currencies[Field.CURRENCY_A]?.symbol} Deposited</Text>
+        <Text style={{ color: 'black' }}>{currencies[Field.CURRENCY_A]?.symbol} Deposited</Text>
         <RowFixed>
           <CurrencyLogo currency={currencies[Field.CURRENCY_A]} style={{ marginRight: '8px' }} />
-          <Text>{parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)}</Text>
+          <Text style={{ color: 'black' }}>{parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)}</Text>
         </RowFixed>
       </RowBetween>
       <RowBetween>
-        <Text>{currencies[Field.CURRENCY_B]?.symbol} Deposited</Text>
+        <Text style={{ color: 'black' }}>{currencies[Field.CURRENCY_B]?.symbol} Deposited</Text>
         <RowFixed>
           <CurrencyLogo currency={currencies[Field.CURRENCY_B]} style={{ marginRight: '8px' }} />
-          <Text>{parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)}</Text>
+          <Text style={{ color: 'black' }}>{parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)}</Text>
         </RowFixed>
       </RowBetween>
       <RowBetween>
-        <Text>Rates</Text>
-        <Text>
+        <Text style={{ color: 'black' }}>Rates</Text>
+        <Text style={{ color: 'black' }}>
           {`1 ${currencies[Field.CURRENCY_A]?.symbol} = ${price?.toSignificant(4)} ${
             currencies[Field.CURRENCY_B]?.symbol
           }`}
         </Text>
       </RowBetween>
       <RowBetween style={{ justifyContent: 'flex-end' }}>
-        <Text>
+        <Text style={{ color: 'black' }}>
           {`1 ${currencies[Field.CURRENCY_B]?.symbol} = ${price?.invert().toSignificant(4)} ${
             currencies[Field.CURRENCY_A]?.symbol
           }`}
         </Text>
       </RowBetween>
       <RowBetween>
-        <Text>Share of Pool:</Text>
-        <Text>{noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}%</Text>
+        <Text style={{ color: 'black' }}>Share of Pool:</Text>
+        <Text style={{ color: 'black' }}>{noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}%</Text>
       </RowBetween>
-      <Button mt="20px" onClick={onAdd}>
+      <Button mt="20px" style={{ backgroundColor: '#FF0000', color: 'white' }} onClick={onAdd}>
         {noLiquidity ? TranslateString(250, 'Create Pool & Supply') : TranslateString(252, 'Confirm Supply')}
       </Button>
     </>

@@ -21,6 +21,10 @@ const InputRow = styled.div<{ selected: boolean }>`
     color: #000000;
     font-weight:500;
   }
+  ::placeholder { 
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+}
 `
 const CurrencySelect = styled.button<{ selected: boolean }>`
   align-items: center;

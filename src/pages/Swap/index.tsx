@@ -355,7 +355,7 @@ const Swap = () => {
 
   return (
     <Container>
-      <Title>The Tab selector, Add the Best Swapping fees in the market!</Title>
+      <Title>Best Swapping fees in the market!</Title>
        <TokenWarningModal
         isOpen={urlLoadedTokens.length > 0 && !dismissTokenWarning}
         tokens={urlLoadedTokens}

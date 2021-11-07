@@ -72,7 +72,7 @@ export default function PoolFinder() {
 
   const prerequisiteMessage = (
     <LightCard padding="45px 10px">
-      <Text style={{ textAlign: 'center' }}>
+      <Text style={{ textAlign: 'center', color: '#A099A5' }}>
         {!account
           ? TranslateString(1174, 'Connect to a wallet to find pools')
           : TranslateString(208, 'Select a token to find your liquidity.')}
@@ -134,7 +134,7 @@ export default function PoolFinder() {
                         {TranslateString(212, 'You don’t have liquidity in this pool yet.')}
                       </Text>
                       <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
-                        <Text style={{ textAlign: 'center' }}>{TranslateString(168, 'Add Liquidity')}</Text>
+                        <Text style={{ textAlign: 'center', color: '#A099A5' }}>{TranslateString(168, 'Add Liquidity')}</Text>
                       </StyledInternalLink>
                     </AutoColumn>
                   </LightCard>

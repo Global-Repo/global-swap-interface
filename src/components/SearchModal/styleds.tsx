@@ -21,7 +21,7 @@ export const MenuItem = styled(RowBetween)`
   cursor: ${({ disabled }) => !disabled && 'pointer'};
   pointer-events: ${({ disabled }) => disabled && 'none'};
   :hover {
-    background-color: ${({ theme, disabled }) => !disabled && theme.colors.invertedContrast};
+    background-color: #F4F0F8;
   }
   opacity: ${({ disabled, selected }) => (disabled || selected ? 0.5 : 1)};
 `
@@ -37,7 +37,7 @@ export const SearchInput = styled.input`
   border: none;
   outline: none;
   border-radius: 20px;
-  color: ${({ theme }) => theme.colors.text};
+  color: black;
   border-style: solid;
   border: 1px solid ${({ theme }) => theme.colors.tertiary};
   -webkit-appearance: none;

@@ -39,7 +39,7 @@ import { ROUTER_ADDRESS } from '../../constants'
 import styled from 'styled-components'
 
 const UIKitTextWrapper = styled(UIKitText)`
-  color: #c0c0c0;
+  color: black;
 `
 
 export default function AddLiquidity({
@@ -366,7 +366,7 @@ export default function AddLiquidity({
                 <div>
                   <UIKitTextWrapper
                     style={{ textTransform: 'uppercase', fontWeight: 600 }}
-                    color="textSubtle"
+                    color="black"
                     fontSize="12px"
                     mb="2px"
                   >
@@ -399,7 +399,7 @@ export default function AddLiquidity({
                           <Button
                             onClick={approveACallback}
                             disabled={approvalA === ApprovalState.PENDING}
-                            style={{ width: approvalB !== ApprovalState.APPROVED ? '48%' : '100%' }}
+                            style={{ backgroundColor: '#FF0000', color: 'white', width: approvalB !== ApprovalState.APPROVED ? '48%' : '100%' }}
                           >
                             {approvalA === ApprovalState.PENDING ? (
                               <Dots>Approving {currencies[Field.CURRENCY_A]?.symbol}</Dots>
@@ -412,7 +412,7 @@ export default function AddLiquidity({
                           <Button
                             onClick={approveBCallback}
                             disabled={approvalB === ApprovalState.PENDING}
-                            style={{ width: approvalA !== ApprovalState.APPROVED ? '48%' : '100%' }}
+                            style={{ backgroundColor: '#FF0000', color: 'white', width: approvalA !== ApprovalState.APPROVED ? '48%' : '100%' }}
                           >
                             {approvalB === ApprovalState.PENDING ? (
                               <Dots>Approving {currencies[Field.CURRENCY_B]?.symbol}</Dots>
@@ -424,6 +424,7 @@ export default function AddLiquidity({
                       </RowBetween>
                     )}
                   <Button
+                    style={{ backgroundColor: '#FF0000', color: 'white' }}
                     onClick={() => {
                       if (expertMode) {
                         onAdd()

@@ -26,6 +26,7 @@ const StyledBalanceText = styled(Text)`
   overflow: hidden;
   max-width: 5rem;
   text-overflow: ellipsis;
+  color: black;
 `
 
 const Tag = styled.div`
@@ -130,7 +131,7 @@ function CurrencyRow({
             </Text>
           ) : null}
           {!isOnSelectedList && !customAdded && !(currency instanceof WrappedTokenInfo) ? (
-            <Text>
+            <Text style={{ color: 'black' }}>
               Found by address
               <LinkStyledButton
                 onClick={(event) => {

@@ -21,13 +21,13 @@ const TransactionSubmittedContent = ({ onDismiss, chainId, hash }: TransactionSu
       <Section>
         <ContentHeader onDismiss={onDismiss}>Transaction submitted</ContentHeader>
         <ConfirmedIcon>
-          <ArrowUpCircle strokeWidth={0.5} size={97} color={theme.colors.primary} />
+          <ArrowUpCircle strokeWidth={0.5} size={97} color={'#FF0000'} />
         </ConfirmedIcon>
         <AutoColumn gap="8px" justify="center">
           {chainId && hash && (
-            <LinkExternal href={getBscScanLink(chainId, hash, 'transaction')}>View on BscScan</LinkExternal>
+            <LinkExternal style={{ color: 'black' }} href={getBscScanLink(chainId, hash, 'transaction')}>View on BscScan</LinkExternal>
           )}
-          <Button onClick={onDismiss} mt="20px">
+          <Button style={{ backgroundColor: '#FF0000', color: 'white' }} onClick={onDismiss} mt="20px">
             Close
           </Button>
         </AutoColumn>

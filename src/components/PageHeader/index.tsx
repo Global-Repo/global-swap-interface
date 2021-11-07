@@ -42,7 +42,7 @@ const PageHeader = ({ title, description, children }: PageHeaderProps) => {
         <Details>
           <Heading color="black" fontSize="28px" mb="8px">{title}</Heading>
           {description && (
-            <Text color="textSubtle" fontSize="14px">
+            <Text color="#A099A5" fontSize="14px">
               {description}
             </Text>
           )}

@@ -33,12 +33,13 @@ const Title = styled.div`
 `
 
 const ButtonWrapper = styled(Button)`
-  background-color: #ff0000;
+  background-color: #FFECEC;
   
     align-items: center;
     border: 0;
     border-radius: 8px;
-    box-shadow: 0px -1px 0px 0px rgba(14,14,44,0.4) inset;
+    border: 1px solid #FFDBDB;
+    /* box-shadow: 0px -1px 0px 0px rgba(14,14,44,0.4) inset; */
     cursor: pointer;
     display: inline-flex;
     font-family: inherit;
@@ -49,10 +50,10 @@ const ButtonWrapper = styled(Button)`
     line-height: 1;
     opacity: 1;
     outline: 0;
-    transition: background-color 0.2s,opacity 0.2s;
+    /* transition: background-color 0.2s,opacity 0.2s; */
     height: 48px;
     padding: 0 24px;
-    color: white;
+    color: #FF0000;
     margin-bottom: 16px;
 `
 
@@ -102,7 +103,8 @@ export default function Pool() {
 
   return (
     <Container>
-      <Title color="black">Best swapping fees in the market!</Title>
+      <Title colour="black">Best swapping fees in the market!</Title>
+
       <CardNav activeIndex={1} />
       <Globby>
         {/*<GlobbyIMG id="customSvg"/>*/}
@@ -157,13 +159,13 @@ export default function Pool() {
               )}
 
               <div>
-                <Text color="textDisabled" fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
+                <Text color="#A099A5" fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
                   {TranslateString(106, "Don't see a pool you joined?")}{' '}
                   <StyledGradientLink id="import-pool-link" to="/find">
                     {TranslateString(108, 'Import it.')}
                   </StyledGradientLink>
                 </Text>
-                <Text color="textDisabled" fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
+                <Text color="#A099A5" fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
                   {TranslateString(1172, 'Or, if you staked your LP tokens in a farm, unstake them to see them here.')}
                 </Text>
               </div>
