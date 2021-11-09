@@ -64,8 +64,8 @@ const StyledRangeInput = styled.input<{ size: number }>`
   &::-webkit-slider-runnable-track {
     background: linear-gradient(
       90deg,
-      ${({ theme }) => theme.colors.primaryDark},
-      ${({ theme }) => theme.colors.tertiary}
+      ${({ theme }) => theme.colors.tertiary},
+      ${({ theme }) => theme.colors.primaryDark}
     );
     height: 2px;
   }
