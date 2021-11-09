@@ -52,7 +52,7 @@ const Separator = styled.div`
 `
 const Title = styled.div`
   color: black;
-  font-size: 30px;
+  font-size: 35px;
   margin-bottom: 50px;
   font-weight: 600;
 `
@@ -358,7 +358,7 @@ const Swap = () => {
 
   return (
     <Container>
-      <Title>Best swapping fees in the market!</Title>
+      <Title>The Tab selector, Add the Best Swapping fees in the market!</Title>
        <TokenWarningModal
         isOpen={urlLoadedTokens.length > 0 && !dismissTokenWarning}
         tokens={urlLoadedTokens}
