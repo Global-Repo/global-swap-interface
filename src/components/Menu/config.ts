@@ -32,13 +32,17 @@ const config: MenuEntry[] = [
   //   label: 'Stake Token',
   //   href: BASE_MAIN_FRONTEND_URL_POOLS_TOKEN,
   // },
-  {
-    label: 'Optimizer',
-    href: BASE_MAIN_FRONTEND_URL_VAULTS,
-  },
+  // {
+  //   label: 'Optimizer',
+  //   href: BASE_MAIN_FRONTEND_URL_VAULTS,
+  // },
   {
     label: 'BeGlobal',
     href: 'https://beglobal.finance/',
+  },
+  {
+    label: 'Docs',
+    href: 'https://beglobal-finance.gitbook.io/beglobal/',
   }
 ]
 

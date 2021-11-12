@@ -1564,10 +1564,10 @@
     eslint-plugin-react "^7.21.5"
     eslint-plugin-react-hooks "^4.0.0"
 
-"@duhd4h/global-sdk@^1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@duhd4h/global-sdk/-/global-sdk-1.0.9.tgz#9ef9eb4ff36201dc0e0eab081c5ef728ace52db7"
-  integrity sha512-YqKMzz/V3v9ioYTIxSk9mJFEkHqarnyksKUHA5TTxaJ6hW5Rctnk3Ldqfzn4CSg/5OcSqVtWxe+A8ISCZIkEfw==
+"@duhd4h/global-sdk@^1.0.10":
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@duhd4h/global-sdk/-/global-sdk-1.0.10.tgz#977f7514995c915dbcf10a23e4b182df02f89bf2"
+  integrity sha512-2GhLWocazzvF34EP0mSOiMeGC3J2I/4/P0Jz2suGQRWrTyAsTHKSOWYJGYxFRfJYX43InMf6oPOD1x0i9OfdAg==
   dependencies:
     "@duhd4h/global-swap-core" "^0.1.0"
     big.js "^5.2.2"

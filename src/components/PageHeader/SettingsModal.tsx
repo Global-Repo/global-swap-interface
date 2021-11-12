@@ -10,6 +10,7 @@ const ModalStyles = styled(Modal)`
   box-shadow: 0px 4px 40px rgba(179, 165, 209, 0.3);
   border-radius: 32px;
   border:0px;
+  border-bottom: 0 !important;
   h2  {
    color:black;
   }
@@ -47,10 +48,8 @@ const defaultOnDismiss = () => null
 const SettingsModal = ({ onDismiss = defaultOnDismiss, translateString }: SettingsModalProps) => {
   return (
     <ModalStyles title={translateString(1200, 'Settings')} onDismiss={onDismiss}>
-      <Top >
         <SlippageToleranceSetting translateString={translateString} />
         <TransactionDeadlineSetting translateString={translateString} />
-      </Top>
     </ModalStyles>
   )
 }

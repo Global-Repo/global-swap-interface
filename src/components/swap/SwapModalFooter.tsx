@@ -43,9 +43,10 @@ export default function SwapModalFooter({
     <>
       <AutoColumn gap="0px">
         <RowBetween align="center">
-          <Text fontSize="14px">Price</Text>
+          <Text fontSize="14px" color="black">Price</Text>
           <Text
             fontSize="14px"
+            color="black"
             style={{
               justifyContent: 'center',
               alignItems: 'center',
@@ -64,7 +65,7 @@ export default function SwapModalFooter({
 
         <RowBetween>
           <RowFixed>
-            <Text fontSize="14px">
+            <Text fontSize="14px" color="black">
               {trade.tradeType === TradeType.EXACT_INPUT
                 ? TranslateString(1210, 'Minimum received')
                 : TranslateString(220, 'Maximum sold')}
@@ -77,12 +78,12 @@ export default function SwapModalFooter({
             />
           </RowFixed>
           <RowFixed>
-            <Text fontSize="14px">
+            <Text fontSize="14px" color="black">
               {trade.tradeType === TradeType.EXACT_INPUT
                 ? slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(4) ?? '-'
                 : slippageAdjustedAmounts[Field.INPUT]?.toSignificant(4) ?? '-'}
             </Text>
-            <Text fontSize="14px" marginLeft="4px">
+            <Text fontSize="14px" marginLeft="4px" color="black">
               {trade.tradeType === TradeType.EXACT_INPUT
                 ? trade.outputAmount.currency.symbol
                 : trade.inputAmount.currency.symbol}
@@ -91,7 +92,7 @@ export default function SwapModalFooter({
         </RowBetween>
         <RowBetween>
           <RowFixed>
-            <Text fontSize="14px">{TranslateString(226, 'Price Impact')}</Text>
+            <Text fontSize="14px" color="black">{TranslateString(226, 'Price Impact')}</Text>
             <QuestionHelper
               text={TranslateString(224, 'The difference between the market price and your price due to trade size.')}
             />
@@ -100,15 +101,15 @@ export default function SwapModalFooter({
         </RowBetween>
         <RowBetween>
           <RowFixed>
-            <Text fontSize="14px">{TranslateString(228, 'Liquidity Provider Fee')}</Text>
+            <Text fontSize="14px" color="black">{TranslateString(228, 'Liquidity Provider Fee')}</Text>
             <QuestionHelper
               text={TranslateString(
                 999,
-                'For each trade a 0.2% fee is paid. 0.17% goes to liquidity providers and 0.03% goes to the PancakeSwap treasury.'
+                'For each trade a 0.036% fee is paid. 0.05% goes to liquidity providers and 0.086% goes to the PancakeSwap treasury.'
               )}
             />
           </RowFixed>
-          <Text fontSize="14px">
+          <Text fontSize="14px" color="black">
             {realizedLPFee ? `${realizedLPFee?.toSignificant(6)} ${trade.inputAmount.currency.symbol}` : '-'}
           </Text>
         </RowBetween>

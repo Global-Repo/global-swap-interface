@@ -54,7 +54,7 @@ export const StyledGradientLink = styled(Link)`
   // background: linear-gradient(to right, #e94e2c, #529cd6);
   // -webkit-background-clip: text;
   // -webkit-text-fill-color: transparent;
-  color: white;
+  color: red !important;
   :hover {
     text-decoration: underline;
   }
@@ -72,7 +72,7 @@ export const StyledGradientLink = styled(Link)`
 const StyledLink = styled.a`
   text-decoration: none;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.primary};
+  color: red;
   font-weight: 500;
 
   :hover {

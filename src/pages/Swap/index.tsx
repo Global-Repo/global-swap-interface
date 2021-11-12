@@ -358,7 +358,7 @@ const Swap = () => {
 
   return (
     <Container>
-      <Title>The Tab selector, Add the Best Swapping fees in the market!</Title>
+      <Title>Best swapping fees in the market!</Title>
        <TokenWarningModal
         isOpen={urlLoadedTokens.length > 0 && !dismissTokenWarning}
         tokens={urlLoadedTokens}
@@ -497,8 +497,10 @@ const Swap = () => {
                 </Button>
 
               ) : noRoute && userHasSpecifiedInputOutput ? (
-                <GreyCard style={{ textAlign: 'center' }}>
-                  <Text mb="4px">{TranslateString(1194, 'Insufficient liquidity for this trade.')}</Text>
+                <GreyCard style={{ textAlign: 'center', color:'black !important' }}>
+                  <Text mb="4px">
+                    <span style={{color:"gray"}}>
+                    {TranslateString(1194, 'Insufficient liquidity for this trade.')}</span></Text>
                 </GreyCard>
               ) : showApproveFlow ? (
                 <RowBetween>

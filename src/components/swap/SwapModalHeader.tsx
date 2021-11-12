@@ -50,13 +50,13 @@ export default function SwapModalHeader({
           <CurrencyLogo currency={trade.inputAmount.currency} size="24px" style={{ marginRight: '12px' }} />
           <Text
             fontSize="24px"
-            color={showAcceptChanges && trade.tradeType === TradeType.EXACT_OUTPUT ? theme.colors.primary : 'text'}
+            color={(showAcceptChanges && trade.tradeType === TradeType.EXACT_OUTPUT ? theme.colors.primary : 'black') }
           >
             {trade.inputAmount.toSignificant(6)}
           </Text>
         </RowFixed>
         <RowFixed gap="0px">
-          <Text fontSize="24px" style={{ marginLeft: '10px', fontWeight: 500 }}>
+          <Text fontSize="24px" color="black" style={{ marginLeft: '10px', fontWeight: 500 }}>
             {trade.inputAmount.currency.symbol}
           </Text>
         </RowFixed>
@@ -82,7 +82,7 @@ export default function SwapModalHeader({
           </Text>
         </RowFixed>
         <RowFixed gap="0px">
-          <Text fontSize="24px" style={{ marginLeft: '10px', fontWeight: 500 }}>
+          <Text fontSize="24px" color="black" style={{ marginLeft: '10px', fontWeight: 500 }}>
             {trade.outputAmount.currency.symbol}
           </Text>
         </RowFixed>
@@ -92,7 +92,7 @@ export default function SwapModalHeader({
           <RowBetween>
             <RowFixed>
               <AlertTriangle size={20} style={{ marginRight: '8px', minWidth: 24 }} />
-              <Text color="primary"> Price Updated</Text>
+              <Text color="black"> Price Updated</Text>
             </RowFixed>
             <Button onClick={onAcceptChanges}>Accept</Button>
           </RowBetween>
@@ -100,7 +100,7 @@ export default function SwapModalHeader({
       ) : null}
       <AutoColumn justify="flex-start" gap="sm" style={{ padding: '16px 0 0' }}>
         {trade.tradeType === TradeType.EXACT_INPUT ? (
-          <PriceInfoText>
+          <PriceInfoText color="black">
             {`Output is estimated. You will receive at least `}
             <span>
               {slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(6)} {trade.outputAmount.currency.symbol}
@@ -108,7 +108,7 @@ export default function SwapModalHeader({
             {' or the transaction will revert.'}
           </PriceInfoText>
         ) : (
-          <PriceInfoText>
+          <PriceInfoText color="black">
             {`Input is estimated. You will sell at most `}
             <span>
               {slippageAdjustedAmounts[Field.INPUT]?.toSignificant(6)} {trade.inputAmount.currency.symbol}

@@ -29,7 +29,24 @@ const Options = styled.div`
     flex-direction: row;
   }
 `
+let buttonStyle = {
+    background: "#F0ECF4",
+    borderRadius: "16px",
+    color: "black",
+    boxShadow: "none",
+    height:"48px",
+    width:"60px"
 
+}
+let buttonStyleSelected = {
+  background: "red",
+  borderRadius: "16px",
+    color: "white",
+    boxShadow: "none",
+    height:"48px",
+    width:"60px"
+
+}
 const TextDescriptionFine = styled(Text)`
   font-weight: 500;
   font-size: 13px;
@@ -100,9 +117,9 @@ const SlippageToleranceSettings = ({ translateString }: SlippageToleranceSetting
 
             return (
               <Option key={predefinedValue}>
-                <Button variant={value === predefinedValue ? 'full_gradient' : 'subtle'} onClick={handleClick}>
+                <button style={predefinedValue === value ?  buttonStyleSelected : buttonStyle} onClick={handleClick}>
                   {label}
-                </Button>
+                </button>
               </Option>
             )
           })}

@@ -21,6 +21,9 @@ const StyledNav = styled.div`
     box-shadow:none;
     font-size: 16px;
   }
+  .illuminateButton{
+    background: #F0ECF4 !important;
+  }
   /* a.cTsiiO {
     background: #F0ECF4;
   } */
@@ -34,12 +37,16 @@ function Nav({ activeIndex = 0 }: { activeIndex?: number }) {
   return (
     <StyledNav>
       <ButtonMenu activeIndex={activeIndex} scale="md" variant="full_gradient">
-        <ButtonMenuItem style={{ padding: '0 40px' }} id="swap-nav-link" to="/swap" as={Link}>
-          {TranslateString(1142, 'Swap')}
-        </ButtonMenuItem>
-        <ButtonMenuItem style={{ padding: '0 40px' }} id="pool-nav-link" to="/pool" as={Link}>
-          {TranslateString(262, 'Liquidity')}
-        </ButtonMenuItem>
+        <div className={activeIndex == 0 ? 'illuminateButton' : ''}>
+          <ButtonMenuItem style={{ padding: '0 40px' }} id="swap-nav-link" to="/swap" as={Link}>
+            {TranslateString(1142, 'Swap')}
+          </ButtonMenuItem>
+        </div>
+        <div  className={activeIndex == 1 ? 'illuminateButton' : ''}>
+          <ButtonMenuItem style={{ padding: '0 40px' }} id="pool-nav-link" to="/pool" as={Link}>
+            {TranslateString(262, 'Liquidity')}
+          </ButtonMenuItem>
+        </div>
         <ButtonMenuItem
           style={{ padding: '0 40px' }}
           id="pool-nav-link"
